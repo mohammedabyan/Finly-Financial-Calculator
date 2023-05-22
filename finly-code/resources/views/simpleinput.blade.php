@@ -29,9 +29,9 @@
                 <!-- /.card-body -->
             </div>
             <!-- /.card -->
-       
 
-        
+
+
             <!-- general form elements -->
             <div class="card card-primary">
                 <div class="card-header">
@@ -56,7 +56,7 @@
                     <input type="number" class="form-control" id="operatingExpenses" placeholder="Enter a number" min=0>
                     </div>
                 </div>
-                <!-- /.card-body -->         
+                <!-- /.card-body -->
             </div>
             <!-- /.card -->
 @stop
