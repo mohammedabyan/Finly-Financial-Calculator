@@ -46,6 +46,12 @@
         <a href="index3.html" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
+        <a href="simpleinput" class="nav-link">Simple</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="advancedinput" class="nav-link">Advanced</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
       </li>
     </ul>
@@ -848,7 +854,7 @@
     <!-- /.sidebar -->
   </aside>
 
- 
+
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
