@@ -40,3 +40,7 @@ Route::get('/simpleinput', function () {
 Route::get('/advancedinput', function () {
     return view('advancedinput');
 });
+
+Route::get('/contact', function () {
+    return view('contact');
+});
