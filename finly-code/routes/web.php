@@ -37,3 +37,6 @@ Route::get('/simpleinput', function () {
     return view('simpleinput');
 });
 
+Route::get('/advancedinput', function () {
+    return view('advancedinput');
+});
