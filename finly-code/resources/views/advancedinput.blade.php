@@ -36,27 +36,27 @@
                 <form>
                 <div class="card-body">
                     <div class="form-group">
-                    <label for="Gross Revenue">Gross Revenue</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(TOOLTIP DESC)></i>
+                    <label for="Gross Revenue">Gross Revenue</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(The total amount of revenue generated before deducting any expenses or costs.)></i>
                     <input type="number" class="form-control" id="grossRevenue" placeholder="Enter a number" min=0>
                     </div>
 
                     <div class="form-group">
-                    <label for="COGs">COGs (Cost of Goods Sold)</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(TOOLTIP DESC)> </i>
+                    <label for="COGs">COGs (Cost of Goods Sold)</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(The direct costs associated with producing or purchasing the goods sold by a business.)> </i>
                     <input type="number" class="form-control" id="cogs" placeholder="Enter a number" min=0>
                     </div>
 
                     <div class="form-group">
-                    <label for="Operating">Operating Expenses</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(TOOLTIP DESC)> </i>
+                    <label for="Operating">Operating Expenses</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(The costs incurred by a business in its day-to-day operations, excluding COGs.)> </i>
                     <input type="number" class="form-control" id="operatingExpenses" placeholder="Enter a number" min=0>
                     </div>
 
                     <div class="form-group">
-                        <label for="Interest">Interest Expenses</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(TOOLTIP DESC)> </i>
+                        <label for="Interest">Interest Expenses</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(The cost of borrowing funds or interest paid on outstanding loans or debt.)> </i>
                         <input type="number" class="form-control" id="interest" placeholder="Enter a number" min=0>
                         </div>
 
                     <div class="form-group">
-                        <label for="Income Tax">Income Tax Expenses</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(TOOLTIP DESC)> </i>
+                        <label for="Income Tax">Income Tax Expenses</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(The amount of taxes payable by a business on its taxable income.)> </i>
                         <input type="number" class="form-control" id="incomeTax" placeholder="Enter a number" min=0>
                         </div>
                 </div>
@@ -75,27 +75,32 @@
                 <form>
                 <div class="card-body">
                     <div class="form-group">
-                    <label for="Current Assets">Current Assets</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(TOOLTIP DESC)> </i>
+                    <label for="Current Assets">Current Assets</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(The resources owned by a business that are expected to be converted into cash or used up within one year.)> </i>
                     <input type="number" class="form-control" id="currentAssets" placeholder="Enter a number" min=0>
                     </div>
 
                     <div class="form-group">
-                    <label for="Inventory">Inventory</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(TOOLTIP DESC)> </i>
+                        <label for="Current Liabilities">Current Liabilities</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(The obligations or debts of a business that are expected to be settled within one year.)> </i>
+                        <input type="number" class="form-control" id="currentLiabilities" placeholder="Enter a number" min=0>
+                        </div>
+
+                    <div class="form-group">
+                    <label for="Inventory">Inventory</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper( The goods or products held by a business for sale or used in the production process.)> </i>
                     <input type="number" class="form-control" id="inventory" placeholder="Enter a number" min=0>
                     </div>
 
                     <div class="form-group">
-                    <label for="Fixed Assets">Fixed Assets</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(TOOLTIP DESC)> </i>
+                    <label for="Fixed Assets">Fixed Assets</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(The long-term tangible assets of a business, such as property, plant, and equipment, used in its operations.)> </i>
                     <input type="number" class="form-control" id="fixedAssets" placeholder="Enter a number" min=0>
                     </div>
 
                     <div class="form-group">
-                        <label for="Total Assets">Total Assets</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(TOOLTIP DESC)> </i>
+                        <label for="Total Assets">Total Assets</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(The sume of the current and fixed assets, representing the total value of its resources.)> </i>
                         <input type="number" class="form-control" id="totalAssets" placeholder="Enter a number" min=0>
                         </div>
 
                     <div class="form-group">
-                        <label for="Total Liabilities">Total Liabilities</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(TOOLTIP DESC)> </i>
+                        <label for="Total Liabilities">Total Liabilities</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(The sum of the current and long-term liabilities, representing its total obligations.)> </i>
                         <input type="number" class="form-control" id="totalLiabilities" placeholder="Enter a number" min=0>
                         </div>
 
