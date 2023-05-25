@@ -29,7 +29,7 @@
       <!-- general form elements -->
       <div class="card card-success">
           <div class="card-header">
-          <h3 class="card-title">Income</h3>
+          <h3 class="card-title">Cash In</h3>
           </div>
           <!-- /.card-header -->
           <!-- form start -->
@@ -58,7 +58,7 @@
       <!-- general form elements -->
       <div class="card card-warning">
           <div class="card-header">
-          <h3 class="card-title">Expenses</h3>
+          <h3 class="card-title">Cash Out</h3>
           </div>
           <!-- /.card-header -->
           <!-- form start -->

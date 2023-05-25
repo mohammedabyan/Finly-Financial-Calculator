@@ -44,3 +44,10 @@ Route::get('/advancedinput', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+
+Route::get('/simpleoutput', function () {
+    return view('simpleoutput');
+});
+
+
+
