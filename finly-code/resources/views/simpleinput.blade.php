@@ -23,78 +23,79 @@
     </div>
     <!-- /.content-header -->
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="col">
-      <!-- general form elements -->
-      <div class="card card-success">
-          <div class="card-header">
-          <h3 class="card-title">Income</h3>
-          </div>
-          <!-- /.card-header -->
-          <!-- form start -->
-          <form>
-          <div class="card-body">
-              <div class="form-group">
-              <label for="Sales">Sales / Gross Revenue</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(TOOLTIP DESC)></i>
-              <input type="number" class="form-control" id="Sales" placeholder="Enter a number" min=0>
-              </div>
+  <div class="container-fluid">
+  <form method="POST" action="/submit-form">
+    @csrf
+    <div class="row">
+      <div class="col">
+        <!-- general form elements -->
+        <div class="card card-success">
+            <div class="card-header">
+            <h3 class="card-title">Income</h3>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            <form>
+            <div class="card-body">            
+                <div class="form-group">
+                <label for="Sales">Sales / Gross Revenue</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(TOOLTIP DESC)></i>
+                <input type="number" class="form-control" id="Sales" placeholder="Enter a number" min=0>
+                </div>         
 
-              <div class="form-group">
-              <label for="Sales">Assets</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(TOOLTIP DESC)> </i>
-              <input type="number" class="form-control" id="Assets" placeholder="Enter a number" min=0>
-              </div>
+                <div class="form-group">
+                <label for="Sales">Assets</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(TOOLTIP DESC)> </i>
+                <input type="number" class="form-control" id="Assets" placeholder="Enter a number" min=0>
+                </div>
 
-              <div class="form-group">
-              <label for="Sales">Inventory</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(TOOLTIP DESC)> </i>
-              <input type="number" class="form-control" id="Sales" placeholder="Enter a number" min=0>
-              </div>
-          </div>
-          <!-- /.card-body -->
+                <div class="form-group">
+                <label for="Sales">Inventory</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(TOOLTIP DESC)> </i>
+                <input type="number" class="form-control" id="Sales" placeholder="Enter a number" min=0>
+                </div>
+                
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
       </div>
-      <!-- /.card -->
-    </div>
-    <div class="col">
-      <!-- general form elements -->
-      <div class="card card-warning">
-          <div class="card-header">
-          <h3 class="card-title">Expenses</h3>
-          </div>
-          <!-- /.card-header -->
-          <!-- form start -->
-          <form>
-          <div class="card-body">
-              <div class="form-group">
-              <label for="COGS">COGS</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(TOOLTIP DESC)> </i>
-              <input type="number" class="form-control" id="COGS" placeholder="Enter a number" min=0>
-              </div>
+      <div class="col">
+        <!-- general form elements -->
+        <div class="card card-warning">
+            <div class="card-header">
+            <h3 class="card-title">Expenses</h3>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            <form>
+            <div class="card-body">
+                <div class="form-group">
+                <label for="COGS">COGS</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(TOOLTIP DESC)> </i>
+                <input type="number" class="form-control" id="COGS" placeholder="Enter a number" min=0>
+                </div>
 
-              <div class="form-group">
-              <label for="Liabilities">Liabilities</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(TOOLTIP DESC)> </i>
-              <input type="number" class="form-control" id="Liabilities" placeholder="Enter a number" min=0>
-              </div>
-
-              <div class="form-group">
-              <label for="Operating Expenses">Inventory</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(TOOLTIP DESC)> </i>
-              <input type="number" class="form-control" id="operatingExpenses" placeholder="Enter a number" min=0>
-              </div>
-          </div>
-          <!-- /.card-body -->
-      </div>
-      <!-- /.card -->
-    </div>
-  </div>
-
-  <div class ="row">
-    <div class="col">
-      <div class="row d-flex justify-content-center">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="form-group">
+                <label for="Liabilities">Liabilities</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(TOOLTIP DESC)> </i>
+                <input type="number" class="form-control" id="Liabilities" placeholder="Enter a number" min=0>
+                </div>
+                
+                <div class="form-group">
+                <label for="Operating Expenses">Inventory</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(TOOLTIP DESC)> </i>
+                <input type="number" class="form-control" id="operatingExpenses" placeholder="Enter a number" min=0>
+                </div>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
       </div>
     </div>
-  </div>
-
-
-
+    <div class="row">
+      <div class="col">
+        <div class="row d-flex justify-content-center">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  
 </div>
 
 @stop

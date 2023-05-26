@@ -49,5 +49,9 @@ Route::get('/simpleoutput', function () {
     return view('simpleoutput');
 });
 
+Route::post('/submit-form', [App\Http\Controllers\FormController::class, 'handleForm']);
+
+
+
 
 
