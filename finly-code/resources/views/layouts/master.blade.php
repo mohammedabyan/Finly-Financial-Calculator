@@ -294,45 +294,64 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+        <li class="nav-item">
+        <a href="home" class="nav-link">
+            <i class="nav-icon fas fa-th"></i>
+            <p>
+            Dashboard
+            <span class="right badge badge-danger">New</span>
+            </p>
+        </a>
+        </li>
           <li class="nav-item menu-open">
-            {{-- <a href="#" class="nav-link active">
+            <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Dashboard
+                Financial Checker
                 <i class="right fas fa-angle-left"></i>
+                <span class="badge badge-info right">2</span>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./d1.blade.php" class="nav-link active">
+                <a href="simpleinput" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v1</p>
+                  <p>Simple Form</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./d2.blade.php" class="nav-link">
+                <a href="advancedinput" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v2</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./d2.blade.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v3</p>
+                  <p>Advanced Form</p>
                 </a>
               </li>
             </ul>
           </li>
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Widgets
-                <span class="right badge badge-danger">New</span>
-              </p>
+            <a href="planner" class="nav-link">
+                <i class="nav-icon far fa-calendar-alt"></i>
+                <p>
+                Planner
+                </p>
             </a>
-          </li>
-          <li class="nav-item">
+            </li>
+            <li class="nav-item">
+                <a href="contact" class="nav-link">
+                    <i class="nav-icon far fa-envelope"></i>
+                    <p>
+                    Contact
+                    </p>
+                </a>
+                </li>
+                <li class="nav-item">
+                    <a href="faq" class="nav-link">
+                        <i class="nav-icon fas fa-book"></i>
+                        <p>
+                        FAQ
+                        </p>
+                    </a>
+                    </li>
+          {{-- <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
@@ -391,8 +410,8 @@
                 </a>
               </li>
             </ul>
-          </li>
-          <li class="nav-item">
+          </li> --}}
+          {{-- <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>
