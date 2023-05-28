@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('d1');
+    return view('home');
 });
 
 Route::get('/d1', function () {
@@ -41,6 +41,22 @@ Route::get('/advancedinput', function () {
     return view('advancedinput');
 });
 
+Route::get('/planner', function () {
+    return view('planner');
+});
+
 Route::get('/contact', function () {
     return view('contact');
 });
+
+Route::get('/faq', function () {
+    return view('faq');
+});
+
+Route::get('/faq', function () {
+    return view('faq');
+});
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
