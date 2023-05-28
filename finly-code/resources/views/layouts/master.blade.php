@@ -48,7 +48,7 @@
   <link rel="stylesheet" href="../plugins/fullcalendar/main.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
-  
+
 
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -295,7 +295,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
+            {{-- <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -549,8 +549,8 @@
                 </a>
               </li>
             </ul>
-          </li>
-          <li class="nav-header">EXAMPLES</li>
+          </li> --}}
+          {{-- <li class="nav-header">EXAMPLES</li>
           <li class="nav-item">
             <a href="pages/calendar.html" class="nav-link">
               <i class="nav-icon far fa-calendar-alt"></i>
@@ -925,7 +925,7 @@
               <p>Informational</p>
             </a>
           </li>
-        </ul>
+        </ul> --}}
       </nav>
       <!-- /.sidebar-menu -->
     </div>
