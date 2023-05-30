@@ -29,8 +29,7 @@
     <!-- /.content-header -->
 
   <div class="container-fluid">
-  <form method="POST" action="/submit-form" id=simpleInput>
-    @csrf
+  <form id=simpleInput>
     <div class="row">
       <div class="col">
         <!-- general form elements -->
@@ -93,8 +92,8 @@
     </div>
     <div class="row">
       <div class="col">
-        <div class="row d-flex justify-content-center">
-          <button type="submit" class="btn btn-primary" onclick="calculateMetrics();">Submit</button>
+        <div id="submit" class="row d-flex justify-content-center">
+          <button type="button" class="btn btn-primary" onclick="calculateMetrics();">Submit</button>
         </div>
       </div>
     </div>
@@ -145,8 +144,7 @@
                         <div class="row">
                           <div class="col">
                             <div class="description-block border-right">
-                              <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 17%</span>
-                              <h5 class="description-header">$35,210.43</h5>
+                              <h5 class="description-header" id="gpText"></h5>
                               <span class="description-text">GROSS PROFIT</span><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(The amount of money remaining after subtracting the cost of goods sold from total revenue. It represents the profit before deducting other expenses.)> </i>
                             </div>
                             <!-- /.description-block -->
@@ -154,8 +152,7 @@
                           <!-- /.col -->
                           <div class="col">
                             <div class="description-block border-right">
-                              <span class="description-percentage text-warning"><i class="fas fa-caret-left"></i> 0%</span>
-                              <h5 class="description-header">$10,390.90</h5>
+                            <h5 class="description-header" id="oiText"></h5>
                               <span class="description-text">OPERATING INCOME</span><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(The profit generated from a companys regular business operations. It is calculated by subtracting operating expenses from gross profit.)> </i>
                             </div>
                             <!-- /.description-block -->
@@ -163,8 +160,7 @@
                           <!-- /.col -->
                           <div class="col">
                             <div class="description-block border-right">
-                              <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 20%</span>
-                              <h5 class="description-header">$24,813.53</h5>
+                            <h5 class="description-header" id="npText"></h5>  
                               <span class="description-text">NET PROFIT</span><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(The final profit earned by a company after deducting all expenses, including taxes and interest. It represents the overall profitability of the business.)> </i>
                             </div>
                             <!-- /.description-block -->
@@ -201,8 +197,7 @@
                         <div class="row">
                           <div class="col">
                             <div class="description-block border-right">
-                              <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 17%</span>
-                              <h5 class="description-header">$35,210.43</h5>
+                            <h5 class="description-header" id="clText"></h5>
                               <span class="description-text">CURRENT LIQUIDITY</span><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(Current liquidity refers to a companys ability to pay off its short-term obligations. It measures the companys ability to meet its current liabilities using its current assets, such as cash, accounts receivable, and inventory.)> </i>
                             </div>
                             <!-- /.description-block -->
@@ -210,8 +205,7 @@
                           <!-- /.col -->
                           <div class="col">
                             <div class="description-block border-right">
-                              <span class="description-percentage text-warning"><i class="fas fa-caret-left"></i> 0%</span>
-                              <h5 class="description-header">$10,390.90</h5>
+                            <h5 class="description-header" id="atText"></h5>  
                               <span class="description-text">QUICK (ACID TEST)</span><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(The acid test, also known as the quick ratio, is a measure of a companys short-term liquidity. It assesses the companys ability to cover its immediate liabilities using its most liquid assets, excluding inventory.)> </i>
                             </div>
                             <!-- /.description-block -->
@@ -249,8 +243,7 @@
                         <div class="row">
                           <div class="col">
                             <div class="description-block border-right">
-                              <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 17%</span>
-                              <h5 class="description-header">$35,210.43</h5>
+                            <h5 class="description-header" id="pmText"></h5>
                               <span class="description-text">PROFIT MARGIN ON SALES</span><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(Profit margin on sales is the percentage of profit a company earns from each dollar of revenue generated. It indicates how efficiently a company manages its costs and pricing strategies to generate profit)></i>
                             </div>
                             <!-- /.description-block -->
@@ -258,8 +251,7 @@
                           <!-- /.col -->
                           <div class="col">
                             <div class="description-block border-right">
-                              <span class="description-percentage text-warning"><i class="fas fa-caret-left"></i> 0%</span>
-                              <h5 class="description-header">$10,390.90</h5>
+                            <h5 class="description-header" id="raText"></h5>
                               <span class="description-text">RETURN ON ASSETS</span><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="left" @popper(Return on assets (ROA) measures a companys profitability in relation to its total assets. It shows how effectively a company utilizes its assets to generate profit.)> </i>
                             </div>
                             <!-- /.description-block -->
@@ -284,4 +276,5 @@
 
 @section('scripts')
 <script src="dist/js/inputoutput.js"></script>
+
 @stop

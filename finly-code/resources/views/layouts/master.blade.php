@@ -890,7 +890,7 @@
 </div>
 <!-- ./wrapper -->
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
@@ -925,24 +925,6 @@
 <script src="dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="dist/js/pages/dashboard.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-  $("form").on("submit", function(event){
-    event.preventDefault(); // Prevent the form from submitting normally
-
-    $.ajax({
-      url: '/submit-form',
-      type: 'post',
-      data: $(this).serialize(), // Serialize form data
-      success: function(response){
-        // This function will be called when the server sends a response
-        alert(response.message);
-      }
-    });
-  });
-});
-</script>
 @yield('scripts')
 @include('popper::assets')
 </body>

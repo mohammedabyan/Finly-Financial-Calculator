@@ -1,13 +1,16 @@
 function calculateMetrics() {
-  document.getElementById("OUTPUT").style.visibility = "visible";
+    
+
+    
+    document.getElementById("OUTPUT").style.visibility = "visible";
     // Get form values
-    const form = document.getElementById('simpleinput');
-    const Sales = form.elements.Sales.value;
-    const Assets = form.elements.Assets.value;
-    const Inventory = form.elements.Inventory.value;
-    const COGS = form.elements.COGS.value;
-    const Liabilities = form.elements.Liabilities.value;
-    const operatingExpenses = form.elements.operatingExpenses.value;
+    //const form = document.getElementById('simpleinput');
+    const Sales = 123//form.elements.Sales.value;
+    const Assets = 123//form.elements.Assets.value;
+    const Inventory = 123//form.elements.Inventory.value;
+    const COGS = 123//form.elements.COGS.value;
+    const Liabilities = 123//form.elements.Liabilities.value;
+    const operatingExpenses = 123//form.elements.operatingExpenses.value;
   
     // Calculate metrics
     const grossProfit = Sales - COGS;
@@ -46,12 +49,12 @@ function calculateMetrics() {
     });
 
     const ctx2 = document.getElementById('liquidityChart').getContext('2d');
-    const liquidityChart = new Chart(ctx1, {
+    const liquidityChart = new Chart(ctx2, {
       type: 'bar',
       data: {
         labels: ['Current Liquidity', 'Quick (Acid Test)'],
         datasets: [{
-          label: 'Amount',
+          label: 'Percentage',
           data: [currentLiquidity, quickLiquidity],
           backgroundColor: [
           'rgba(128, 0, 128, 1)',
@@ -73,12 +76,12 @@ function calculateMetrics() {
     });
 
     const ctx3 = document.getElementById('profitabilityChart').getContext('2d');
-    const profitabilityChart = new Chart(ctx1, {
+    const profitabilityChart = new Chart(ctx3, {
       type: 'bar',
       data: {
         labels: ['Profit Margin on Sales', 'Return on Assets'],
         datasets: [{
-          label: 'Amount',
+          label: 'Percentage',
           data: [profitMargin, returnOnAssets],
           backgroundColor: [
           'rgba(128, 0, 128, 1)',
@@ -98,9 +101,15 @@ function calculateMetrics() {
         }
       }
     });
-  
     
+    gpText.innerHTML = grossProfit;
+    oiText.innerHTML = operatingIncome;
+    clText.innerHTML = currentLiquidity +"&#215;";
+    atText.innerHTML = quickLiquidity +"&#215;";
+    pmText.innerHTML = profitMargin +"&#215;";
+    raText.innerHTML = returnOnAssets +"&#215;";
 
+    document.getElementById("submit").style.visibility = "hidden";
     
   
 }
