@@ -25,7 +25,7 @@ class FormController extends Controller
         $liabilities = $request->input('Liabilities');
         $operatingExpenses = $request->input('operatingExpenses');
         
-        /*
+        /* 
         $validatedData = $request->validate([
             'Sales' => 'required|numeric|min:0',
             'Assets' => 'required|numeric|min:0',
@@ -34,12 +34,12 @@ class FormController extends Controller
             'Liabilities' => 'required|numeric|min:0',
             'operatingExpenses' => 'required|numeric|min:0',
         ]);
-
         */
-        // If validation passes, you can process the data
-        //$message = "Form submitted successfully! Here are the details:\n";
-        //$message .= "Sales: {$validatedData['Sales']}, Assets: {$validatedData['Assets']}, Inventory: {$validatedData['Inventory']}\n";
-        //$message .= "COGS: {$validatedData['COGS']}, Liabilities: {$validatedData['Liabilities']}, Operating Expenses: {$validatedData['operatingExpenses']}\n";
+        
+        
+        $message = "Form submitted successfully! Here are the details:\n";
+        $message .= "Sales: {$validatedData['Sales']}, Assets: {$validatedData['Assets']}, Inventory: {$validatedData['Inventory']}\n";
+        $message .= "COGS: {$validatedData['COGS']}, Liabilities: {$validatedData['Liabilities']}, Operating Expenses: {$validatedData['operatingExpenses']}\n";
 
         //return response()->json(['message' => $message]);
         $message = "Form submitted successfully! Here are the details:\n";
