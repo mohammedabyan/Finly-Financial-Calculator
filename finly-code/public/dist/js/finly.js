@@ -3,45 +3,22 @@ function calculateMetrics() {
 
     document.getElementById("OUTPUT").style.visibility = "visible";
     // Get form values
-    // const form = document.getElementById('simpleInput');
-    // const Sales = form.elements.grossRevenue.value;
-    // const Assets = form.elements.totalAssets.value;
-    // const Inventory = form.elements.inventory.value;
-    // const COGS = form.elements.costOfGoodsSold.value;
-    // const Liabilities = form.elements.totalLiabilities.value;
-    // const operatingExpenses = form.elements.operatingExpenses.value;
-
-        const grossRevenue = form.elements.grossRevenue.value;
-    const costOfGoodsSold = form.elements.costOfGoodsSold.value;
+    const form = document.getElementById('simpleInput');
+    const Sales = form.elements.grossRevenue.value;
+    const Assets = form.elements.totalAssets.value;
+    const Inventory = form.elements.inventory.value;
+    const COGS = form.elements.costOfGoodsSold.value;
+    const Liabilities = form.elements.totalLiabilities.value;
     const operatingExpenses = form.elements.operatingExpenses.value;
-    const interestExpense = form.elements.interestExpense.value;
-    const incomeTaxExpense = form.elements.incomeTaxExpense.value;
-    const currentAssets = form.elements.currentAssets.value;
-    const currentLiabilities = form.elements.currentLiabilities.value;
-    const inventory = form.elements.inventory.value;
-    const fixedAssets = form.elements.fixedAssets.value;
-    const totalAssets = form.elements.totalAssets.value;
-    const totalLiabilities = form.elements.totalLiabilities.value;
+
 
     // Calculate metrics
-    // const grossProfit = Sales - COGS;
-    // const operatingIncome = grossProfit - operatingExpenses;
-    // const currentLiquidity = Assets / Liabilities;
-    // const quickLiquidity = (Assets - Inventory) / Liabilities;
-    // const profitMargin = grossProfit / Sales;
-    // const returnOnAssets = grossProfit / Assets;
-
-    const grossProfit = grossRevenue - costOfGoodsSold;
-  const operatingIncome = grossProfit - operatingExpenses;
-  const incomeBeforeTax = operatingIncome - interestExpense;
-  const netProfit = incomeBeforeTax - incomeTaxExpense;
-  const currentLiquidity = currentAssets / currentLiabilities;
-  const quickLiquidity = (currentAssets - inventory) / currentLiabilities;
-  const inventoryTurnover = grossRevenue / inventory;
-  const fixedAssetsTurnover = grossRevenue / fixedAssets;
-  const debtToTotalAssets = totalLiabilities / totalAssets;
-  const profitMargin = netProfit / grossRevenue;
-  const returnOnAssets = netProfit / totalAssets;
+    const grossProfit = Sales - COGS;
+    const operatingIncome = grossProfit - operatingExpenses;
+    const currentLiquidity = Assets / Liabilities;
+    const quickLiquidity = (Assets - Inventory) / Liabilities;
+    const profitMargin = grossProfit / Sales;
+    const returnOnAssets = grossProfit / Assets;
 
     // Display barchart
     const ctx1 = document.getElementById('salesChart').getContext('2d');
