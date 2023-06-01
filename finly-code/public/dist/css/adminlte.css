@@ -10,17 +10,6 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
- .sidebar {
-    background-color: purple !important
-    }
-
-.img-responsive {
-    height: auto;
-    width: auto;
-    max-height: 72px;
-    max-width: 250px;
-}
-
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -8302,7 +8291,6 @@ button.bg-dark:focus {
 .mt-2,
 .my-2 {
   margin-top: 0.5rem !important;
-  background-color: var(--purple);
 }
 
 .mr-2,
@@ -12569,7 +12557,6 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
   height: 100vh;
   overflow-y: hidden;
   z-index: 1038;
-  background-color: var(--purple);
 }
 
 .main-sidebar a:-moz-focusring {
@@ -12587,7 +12574,6 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
   padding-top: 0;
   scrollbar-color: #a9a9a9 transparent;
   scrollbar-width: none;
-  background-color: var(--purple);
 }
 
 .sidebar::-webkit-scrollbar-thumb {
