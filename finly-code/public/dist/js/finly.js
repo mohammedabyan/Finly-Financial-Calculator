@@ -1,17 +1,16 @@
 function calculateMetrics() {
-    
 
-    
+
     document.getElementById("OUTPUT").style.visibility = "visible";
     // Get form values
-    //const form = document.getElementById('simpleinput');
-    const Sales = 123//form.elements.Sales.value;
-    const Assets = 123//form.elements.Assets.value;
-    const Inventory = 123//form.elements.Inventory.value;
-    const COGS = 123//form.elements.COGS.value;
-    const Liabilities = 123//form.elements.Liabilities.value;
-    const operatingExpenses = 123//form.elements.operatingExpenses.value;
-  
+    const form = document.getElementById('simpleInput');
+    const Sales = form.elements.grossRevenue.value;
+    const Assets = form.elements.totalAssets.value;
+    const Inventory = form.elements.inventory.value;
+    const COGS = form.elements.costOfGoodsSold.value;
+    const Liabilities = form.elements.totalLiabilities.value;
+    const operatingExpenses = form.elements.operatingExpenses.value;
+
     // Calculate metrics
     const grossProfit = Sales - COGS;
     const operatingIncome = grossProfit - operatingExpenses;
@@ -19,7 +18,7 @@ function calculateMetrics() {
     const quickLiquidity = (Assets - Inventory) / Liabilities;
     const profitMargin = grossProfit / Sales;
     const returnOnAssets = grossProfit / Assets;
-  
+
     // Display barchart
     const ctx1 = document.getElementById('salesChart').getContext('2d');
     const barChart = new Chart(ctx1, {
@@ -101,7 +100,7 @@ function calculateMetrics() {
         }
       }
     });
-    
+
     gpText.innerHTML = grossProfit;
     oiText.innerHTML = operatingIncome;
     clText.innerHTML = currentLiquidity +"&#215;";
@@ -110,6 +109,6 @@ function calculateMetrics() {
     raText.innerHTML = returnOnAssets +"&#215;";
 
     document.getElementById("submit").style.visibility = "hidden";
-    
-  
+
+
 }
