@@ -37,8 +37,8 @@ Route::get('/simpleinput', function () {
     return view('simpleinput');
 });
 
-Route::get('/advancedinput', function () {
-    return view('advancedinput');
+Route::get('/advanced', function () {
+    return view('safeadvanced');
 });
 
 Route::get('/contact', function () {
@@ -51,7 +51,6 @@ Route::get('/simpleoutput', function () {
 
 Route::post('/submit-form', [App\Http\Controllers\FormController::class, 'handleForm']);
 
-
-
-
-
+Route::get('/home', function () {
+    return view('home');
+});
