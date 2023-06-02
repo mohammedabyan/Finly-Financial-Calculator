@@ -70,7 +70,7 @@
 
 
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+  <nav class="main-header navbar navbar-expand navbar-light">
 
     <ul class="navbar-nav ml-auto">
         <!-- Authentication Links -->
@@ -243,11 +243,11 @@
   <!-- /.navbar --> --}}
 
 <!-- Main Sidebar Container -->
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside class="main-sidebar sidebar-light-purple elevation-4">
     <!-- Brand Logo -->
     <a href="home" class="brand-link" style="background-color: #8C52FF">
       <img src="dist/img/finlylogo.png" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">FINLY</span>
+      <span class="brand-text font-weight-light text-white">FINLY</span>
     </a>
 
     <!-- Sidebar -->
@@ -276,7 +276,7 @@
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <ul id="main-side" class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
         <li class="nav-item">
@@ -288,8 +288,8 @@
             </p>
         </a>
         </li>
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Financial Checker
@@ -299,7 +299,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="simpleinput" class="nav-link active">
+                <a href="simpleinput" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Simple Form</p>
                 </a>
@@ -973,6 +973,37 @@
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
+
+<script>
+$(function () {
+    var url = window.location;
+    // for single sidebar menu
+    $('ul.nav-sidebar a').filter(function () {
+        return this.href == url;
+    }).addClass('active');
+
+    // for sidebar menu and treeview
+    $('ul.nav-treeview a').filter(function () {
+        return this.href == url;
+    }).parentsUntil(".nav-sidebar > .nav-treeview")
+        .css({'display': 'block'})
+        .addClass('menu-open').prev('a')
+        .addClass('active');
+});
+</script>
+
+<script>
+    function activeFunc(){
+            $("li").removeClass("active current-page");
+              var currentSelectedli = $("a.router-link-exact-active").parent('li');
+              currentSelectedli.addClass("current-page");
+              currentSelectedli.siblings().removeClass("active current-page");
+             var parentLI =currentSelectedli.parent("ul").parent("li");
+             if(parentLI.length!=0){
+                 parentLI.addClass("active");
+             }
+         }
+  </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- jQuery -->
