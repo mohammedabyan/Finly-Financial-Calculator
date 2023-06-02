@@ -3,29 +3,26 @@
 
 @section('content')
 
- <!-- Content Wrapper. Contains page content -->
- <div class="content-wrapper">
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
+    <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Contact us</h1>
-          </div>
+          <h1 class="m-0">Contact Us</h1>
+          </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="home">Home</a></li>
-              <li class="breadcrumb-item active">Contact us</li>
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Contact</li>
             </ol>
-          </div>
-        </div>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
       </div><!-- /.container-fluid -->
-    </section>
-
-    <!-- Main content -->
-    <section class="content">
-
-      <!-- Default box -->
+    </div>
+    <!-- /.content-header -->
+             <!-- Default box -->
       <div class="card">
         <div class="card-body row">
           <div class="col-5 text-center d-flex align-items-center justify-content-center">
@@ -64,11 +61,5 @@
           </div>
         </div>
       </div>
-
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-
 @stop
 
