@@ -29,7 +29,7 @@
     <!-- /.content-header -->
 
   <div class="container-fluid">
-  <form id=simpleInput>
+  <form id="simpleInput">
     <div class="row">
       <div class="col">
         <!-- general form elements -->
@@ -39,23 +39,22 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <div class="card-body">            
+            <div class="card-body">
                 <div class="form-group">
-                <label for="sales">Sales / Gross Revenue</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(TOOLTIP DESC)></i>
-                <input type="number" class="form-control" id="Sales" placeholder="Enter a number" min=0>
-                </div>         
-
-                <div class="form-group">
-                <label for="assets">Assets</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(TOOLTIP DESC)> </i>
-                <input type="number" class="form-control" id="Assets" placeholder="Enter a number" min=0>
+                <label for="grossRevenue">Sales / Gross Revenue</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(TOOLTIP DESC)></i>
+                <input type="number" class="form-control" id="grossRevenue" placeholder="Enter a number" min=0>
                 </div>
 
                 <div class="form-group">
-                <label for="inventory
-                ">Inventory</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(TOOLTIP DESC)> </i>
-                <input type="number" class="form-control" id="Inventory" placeholder="Enter a number" min=0>
+                <label for="totalAssets">Total Assets</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(TOOLTIP DESC)> </i>
+                <input type="number" class="form-control" id="totalAssets" placeholder="Enter a number" min=0>
                 </div>
-                
+
+                <div class="form-group">
+                <label for="inventory">Inventory</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(TOOLTIP DESC)> </i>
+                <input type="number" class="form-control" id="inventory" placeholder="Enter a number" min=0>
+                </div>
+
             </div>
             <!-- /.card-body -->
         </div>
@@ -71,17 +70,17 @@
             <!-- form start -->
             <div class="card-body">
                 <div class="form-group">
-                <label for="COGS">COGS</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(TOOLTIP DESC)> </i>
-                <input type="number" class="form-control" id="COGS" placeholder="Enter a number" min=0>
+                <label for="costOfGoodsSold">COGS</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(TOOLTIP DESC)> </i>
+                <input type="number" class="form-control" id="costOfGoodsSold" placeholder="Enter a number" min=0>
                 </div>
 
                 <div class="form-group">
-                <label for="Liabilities">Liabilities</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(TOOLTIP DESC)> </i>
-                <input type="number" class="form-control" id="Liabilities" placeholder="Enter a number" min=0>
+                <label for="totalLiabilities">Total Liabilities</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(TOOLTIP DESC)> </i>
+                <input type="number" class="form-control" id="totalLiabilities" placeholder="Enter a number" min=0>
                 </div>
-                
+
                 <div class="form-group">
-                <label for="Operating Expenses">Operating Expenses</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(TOOLTIP DESC)> </i>
+                <label for="operatingExpenses">Operating Expenses</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(TOOLTIP DESC)> </i>
                 <input type="number" class="form-control" id="operatingExpenses" placeholder="Enter a number" min=0>
                 </div>
             </div>
@@ -98,6 +97,7 @@
       </div>
     </div>
   </form>
+
 
   <!-- OUTPUT -->
       <div class="row" id="OUTPUT">
@@ -160,7 +160,7 @@
                           <!-- /.col -->
                           <div class="col">
                             <div class="description-block border-right">
-                            <h5 class="description-header" id="npText"></h5>  
+                            <h5 class="description-header" id="npText"></h5>
                               <span class="description-text">NET PROFIT</span><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(The final profit earned by a company after deducting all expenses, including taxes and interest. It represents the overall profitability of the business.)> </i>
                             </div>
                             <!-- /.description-block -->
@@ -205,7 +205,7 @@
                           <!-- /.col -->
                           <div class="col">
                             <div class="description-block border-right">
-                            <h5 class="description-header" id="atText"></h5>  
+                            <h5 class="description-header" id="atText"></h5>
                               <span class="description-text">QUICK (ACID TEST)</span><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(The acid test, also known as the quick ratio, is a measure of a companys short-term liquidity. It assesses the companys ability to cover its immediate liabilities using its most liquid assets, excluding inventory.)> </i>
                             </div>
                             <!-- /.description-block -->
@@ -269,12 +269,11 @@
               <!-- /.card -->
             </div>
           </div>
-        </div>   
-  
+        </div>
+
 </div>
-@stop
 
-@section('scripts')
-<script src="dist/js/inputoutput.js"></script>
+<script src="dist/js/finly.js"></script>
 
 @stop
+
