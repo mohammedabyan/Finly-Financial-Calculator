@@ -102,14 +102,14 @@ function calculateMetrics() {
       }
     });
 
-    gpText.innerHTML = grossProfit;
-    oiText.innerHTML = operatingIncome;
-    clText.innerHTML = currentLiquidity +"&#215;";
-    atText.innerHTML = quickLiquidity +"&#215;";
-    pmText.innerHTML = profitMargin +"&#215;";
-    raText.innerHTML = returnOnAssets +"&#215;";
+    // gpText.innerHTML = grossProfit;
+    // oiText.innerHTML = operatingIncome;
+    // clText.innerHTML = currentLiquidity +"&#215;";
+    // atText.innerHTML = quickLiquidity +"&#215;";
+    // pmText.innerHTML = profitMargin +"&#215;";
+    // raText.innerHTML = returnOnAssets +"&#215;";
 
-    document.getElementById("submit").style.visibility = "hidden";
+    document.getElementById("submit").style.visibility = "hidden";;
 
 
 }

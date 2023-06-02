@@ -364,7 +364,7 @@
                               </p>
 
                               <div class="chart">
-                                <!-- Sales Chart Canvas -->
+                                <!-- Sales Chart Canvass -->
                                 <canvas id="profitabilityChart" height="180" style="height: 180px;"></canvas>
                               </div>
                               <!-- /.chart-responsive -->
