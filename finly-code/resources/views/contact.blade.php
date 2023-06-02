@@ -27,9 +27,14 @@
         <div class="card-body row">
           <div class="col-5 text-center d-flex align-items-center justify-content-center">
             <div class="">
-              <h2>Admin<strong>LTE</strong></h2>
-              <p class="lead mb-5">123 Testing Ave, Testtown, 9876 NA<br>
-                Phone: +1 234 56789012
+
+                <a class="navbar-brand" href="{{ url('/') }}">
+                <img src="dist/img/finlylogo.png" width="90" height="90">
+                </a>
+
+              <h2>Finly<strong>LITE</strong></h2>
+              <p class="lead mb-5">IIUM Gombak, 53100 Selangor, Malaysia<br>
+                Phone: +603-6421 6421
               </p>
             </div>
           </div>

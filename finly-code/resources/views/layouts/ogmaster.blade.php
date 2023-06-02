@@ -39,13 +39,33 @@
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
+  <!-- CSRF Token -->
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+
+  <!-- Fonts -->
+  <link rel="dns-prefetch" href="//fonts.bunny.net">
+  <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+
+  <!-- Scripts -->
+  @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+  <!-- fullCalendar -->
+  <link rel="stylesheet" href="../plugins/fullcalendar/main.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
   <!-- Preloader -->
   <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+    <img class="animation__shake" src="dist/img/finlylogo.png" height="60" width="60">
   </div>
 
 
@@ -76,7 +96,54 @@
       </li>
     </ul>
 
-    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+        <!-- Authentication Links -->
+        @guest
+            @if (Route::has('login'))
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                </li>
+            @endif
+
+            @if (Route::has('register'))
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                </li>
+            @endif
+        @else
+            <li class="nav-item dropdown">
+                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    {{ Auth::user()->name }}
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                       onclick="event.preventDefault();
+                                     document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                </div>
+            </li>
+        @endguest
+
+        <li class="nav-item">
+            <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+              <i class="fas fa-expand-arrows-alt"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-widget="control-sidebar" data-controlsidebar-slide="true" href="#" role="button">
+              <i class="fas fa-th-large"></i>
+            </a>
+          </li>
+    </ul>
+    </nav>
+
+    {{-- <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <!-- Navbar Search -->
       <li class="nav-item">
@@ -197,10 +264,10 @@
       </li>
     </ul>
   </nav>
-  <!-- /.navbar -->
+  <!-- /.navbar --> --}}
 
 <!-- Main Sidebar Container -->
-<aside class="main-sidebar sidebar-light-purple elevation-4">
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="home" class="brand-link" style="background-color: #8C52FF">
       <img src="dist/img/finlylogo.png" class="brand-image img-circle elevation-3" style="opacity: .8">
@@ -209,9 +276,19 @@
 
     <!-- Sidebar -->
     <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="dist/img/boy.png" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">{{ Auth::user()->name ?? 'Guest User'}}</a>
+        </div>
+      </div>
+
       <!-- SidebarSearch Form -->
       <div class="form-inline">
-        <div class="input-group" data-widget="sidebar-search">
+        <div class="input-group" data-widget="sidebar-search" style="color:white">
           <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
           <div class="input-group-append">
             <button class="btn btn-sidebar">
@@ -223,7 +300,7 @@
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
-        <ul id="main-side" class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
         <li class="nav-item">
@@ -239,41 +316,51 @@
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Dashboard
+                Financial Checker
                 <i class="right fas fa-angle-left"></i>
+                <span class="badge badge-info right">2</span>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="simpleinput" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v1</p>
+                  <p>Simple Form</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./d2.blade.php" class="nav-link">
+                <a href="advancedinput" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v2</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./d2.blade.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v3</p>
+                  <p>Advanced Form</p>
                 </a>
               </li>
             </ul>
           </li>
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Widgets
-                <span class="right badge badge-danger">New</span>
-              </p>
+            <a href="planner" class="nav-link">
+                <i class="nav-icon far fa-calendar-alt"></i>
+                <p>
+                Planner
+                </p>
             </a>
-          </li>
-          <li class="nav-item">
+            </li>
+            <li class="nav-item">
+                <a href="contact" class="nav-link">
+                    <i class="nav-icon far fa-envelope"></i>
+                    <p>
+                    Contact
+                    </p>
+                </a>
+                </li>
+                <li class="nav-item">
+                    <a href="faq" class="nav-link">
+                        <i class="nav-icon fas fa-book"></i>
+                        <p>
+                        FAQ
+                        </p>
+                    </a>
+                    </li>
+          {{-- <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
@@ -332,8 +419,8 @@
                 </a>
               </li>
             </ul>
-          </li>
-          <li class="nav-item">
+          </li> --}}
+          {{-- <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>
@@ -490,8 +577,8 @@
                 </a>
               </li>
             </ul>
-          </li>
-          <li class="nav-header">EXAMPLES</li>
+          </li> --}}
+          {{-- <li class="nav-header">EXAMPLES</li>
           <li class="nav-item">
             <a href="pages/calendar.html" class="nav-link">
               <i class="nav-icon far fa-calendar-alt"></i>
@@ -866,7 +953,7 @@
               <p>Informational</p>
             </a>
           </li>
-        </ul>
+        </ul> --}}
       </nav>
       <!-- /.sidebar-menu -->
     </div>
@@ -911,37 +998,6 @@
 </div>
 <!-- ./wrapper -->
 
-<script>
-$(function () {
-    var url = window.location;
-    // for single sidebar menu
-    $('ul.nav-sidebar a').filter(function () {
-        return this.href == url;
-    }).addClass('active');
-
-    // for sidebar menu and treeview
-    $('ul.nav-treeview a').filter(function () {
-        return this.href == url;
-    }).parentsUntil(".nav-sidebar > .nav-treeview")
-        .css({'display': 'block'})
-        .addClass('menu-open').prev('a')
-        .addClass('active');
-});
-</script>
-
-<script>
-    function activeFunc(){
-            $("li").removeClass("active current-page");
-              var currentSelectedli = $("a.router-link-exact-active").parent('li');
-              currentSelectedli.addClass("current-page");
-              currentSelectedli.siblings().removeClass("active current-page");
-             var parentLI =currentSelectedli.parent("ul").parent("li");
-             if(parentLI.length!=0){
-                 parentLI.addClass("active");
-             }
-         }
-  </script>
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>
@@ -977,7 +1033,29 @@ $(function () {
 <script src="dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="dist/js/pages/dashboard.js"></script>
-@yield('scripts')
+
+<!-- OPTIONAL SCRIPTS -->
+<script src="plugins/chart.js/Chart.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="dist/js/demo.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="dist/js/pages/dashboard3.js"></script>
+
+<!-- PAGE PLUGINS -->
+<!-- jQuery Mapael -->
+<script src="plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
+<script src="plugins/raphael/raphael.min.js"></script>
+<script src="plugins/jquery-mapael/jquery.mapael.min.js"></script>
+<script src="plugins/jquery-mapael/maps/usa_states.min.js"></script>
+<!-- ChartJS -->
+<script src="plugins/chart.js/Chart.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.js"></script>
+
 @include('popper::assets')
+<script src="{{ asset('js/app.js') }}"></script>
+
 </body>
 </html>
