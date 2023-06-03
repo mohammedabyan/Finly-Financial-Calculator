@@ -178,9 +178,7 @@
 </div>
 
 
-
 @stop
-
 
 @section('script')
 
