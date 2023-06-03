@@ -114,6 +114,91 @@ function calculateMetrics() {
 
 }
 
+
+function calculateSimpleMetrics() {
+
+
+    document.getElementById("OUTPUT").style.visibility = "visible";
+    // Get form values
+    const form = document.getElementById('simpleInput');
+    const Sales = form.elements.grossRevenue.value;
+    const Inventory = form.elements.inventory.value;
+    const COGS = form.elements.costOfGoodsSold.value;
+    const operatingExpenses = form.elements.operatingExpenses.value;
+
+
+    // Calculate metrics
+    const grossProfit = Sales - COGS;
+    const netProfit = grossProfit - operatingExpenses;
+    const profitMargin = grossProfit / Sales;
+    const inventoryTurnover = Sales / Inventory;
+
+    // Display barchart
+    const ctx1 = document.getElementById('salesChart').getContext('2d');
+    const barChart = new Chart(ctx1, {
+      type: 'bar',
+      data: {
+        labels: ['Gross Profit','netProfit'],
+        datasets: [{
+          label: 'Amount',
+          data: [grossProfit, netProfit],
+          backgroundColor: [
+          'rgba(128, 0, 128, 1)',
+          'rgba(128, 0, 128, 0.8)',
+          ], /* Purple */
+          borderColor: 'White', /* Purple */
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        }
+      }
+    });
+    gpText.innerHTML =  grossProfit;
+    npText.innerHTML = netProfit;
+
+    const ctx2 = document.getElementById('profitabilityChart').getContext('2d');
+    const profitabilityChart = new Chart(ctx2, {
+      type: 'bar',
+      data: {
+        labels: ['Inventory Turnover', 'Profit Margin on Sales'],
+        datasets: [{
+          label: 'Percentage',
+          data: [inventoryTurnover, profitMargin],
+          backgroundColor: [
+          'rgba(128, 0, 128, 1)',
+          'rgba(128, 0, 128, 0.8)',
+          ], /* Purple */
+          borderColor: 'White', /* Purple */
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        }
+      }
+    });
+    itText.innerHTML = inventoryTurnover +"&#215;";
+    pmText.innerHTML = profitMargin +"&#215;";
+
+
+
+    // document.getElementById("submit").style.visibility = "hidden";
+
+
+}
+
 function calculateAdvancedMetrics() {
 
 
@@ -311,7 +396,7 @@ function calculateAdvancedMetrics() {
   raText.innerHTML = returnOnAssets +"&#215;";
   roeText.innerHTML = returnOnAssets +"&#215;";
 
-  document.getElementById("submit").style.visibility = "hidden";
+//   document.getElementById("submit").style.visibility = "hidden";
 
 
 }

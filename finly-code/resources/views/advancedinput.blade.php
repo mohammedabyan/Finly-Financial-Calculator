@@ -33,7 +33,7 @@
         <div class="row">
           <div class="col">
             <!-- general form elements -->
-            <div class="card card-success">
+            <div class="card bg-gradient-primary">
                 <div class="card-header">
                 <h3 class="card-title">Income Statement Items</h3>
                 </div>
@@ -64,6 +64,10 @@
                         <label for="Income Tax">Income Tax Expenses</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(The amount of taxes payable by a business on its taxable income.)> </i>
                         <input type="number" class="form-control" id="incomeTax" placeholder="Enter a number" min=0>
                     </div>
+                    <div class="form-group disabled">
+                        <label for="none">N/A</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(Not applicable.)> </i>
+                        <input type="number" class="form-control" id="none" placeholder="--N/A--" disabled>
+                    </div>
                 </div>
                 <!-- /.card-body -->
             </div>
@@ -71,7 +75,7 @@
           </div>
           <div class="col">
             <!-- general form elements -->
-            <div class="card card-warning">
+            <div class="card bg-gradient-warning">
                 <div class="card-header">
                 <h3 class="card-title">Balance Sheet Items</h3>
                 </div>
@@ -117,8 +121,8 @@
 
         <div class ="row">
           <div class="col">
-            <div class="row d-flex justify-content-center">
-              <button type="button" class="btn btn-primary" id="submit" onclick="calculateAdvancedMetrics()">Submit</button>
+            <div class="d-flex justify-content-center">
+              <button type="button" class="btn btn-block btn-secondary btn-s" id="submit" onclick="calculateAdvancedMetrics()">Submit</button>
             </div>
           </div>
         </div>

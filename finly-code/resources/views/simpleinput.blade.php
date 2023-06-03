@@ -1,3 +1,5 @@
+<!-- SIMPLEINPUT -->
+
 @extends('layouts.master')
 
 @section('style')
@@ -8,7 +10,7 @@
 
 @section('content')
 
-<!-- Content Wrapper. Contains page t content -->
+<!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -19,7 +21,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="home">Home</a></li>
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
               <li class="breadcrumb-item active">Simple</li>
             </ol>
           </div><!-- /.col -->
@@ -33,7 +35,7 @@
     <div class="row">
       <div class="col">
         <!-- general form elements -->
-        <div class="card card-success">
+        <div class="card bg-gradient-primary">
             <div class="card-header">
             <h3 class="card-title">Income</h3>
             </div>
@@ -43,11 +45,6 @@
                 <div class="form-group">
                 <label for="grossRevenue">Sales / Gross Revenue</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(TOOLTIP DESC)></i>
                 <input type="number" class="form-control" id="grossRevenue" placeholder="Enter a number" min=0>
-                </div>
-
-                <div class="form-group">
-                <label for="totalAssets">Total Assets</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(TOOLTIP DESC)> </i>
-                <input type="number" class="form-control" id="totalAssets" placeholder="Enter a number" min=0>
                 </div>
 
                 <div class="form-group">
@@ -62,7 +59,7 @@
       </div>
       <div class="col">
         <!-- general form elements -->
-        <div class="card card-warning">
+        <div class="card bg-gradient-warning">
             <div class="card-header">
             <h3 class="card-title">Expenses</h3>
             </div>
@@ -72,11 +69,6 @@
                 <div class="form-group">
                 <label for="costOfGoodsSold">COGS</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(TOOLTIP DESC)> </i>
                 <input type="number" class="form-control" id="costOfGoodsSold" placeholder="Enter a number" min=0>
-                </div>
-
-                <div class="form-group">
-                <label for="totalLiabilities">Total Liabilities</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(TOOLTIP DESC)> </i>
-                <input type="number" class="form-control" id="totalLiabilities" placeholder="Enter a number" min=0>
                 </div>
 
                 <div class="form-group">
@@ -91,8 +83,8 @@
     </div>
     <div class="row">
       <div class="col">
-        <div id="submit" class="row d-flex justify-content-center">
-          <button type="button" class="btn btn-primary" onclick="calculateMetrics();">Submit</button>
+        <div id="submit" class="d-flex justify-content-center">
+          <button type="button" class="btn btn-block btn-secondary btn-s" onclick="calculateSimpleMetrics();">Submit</button>
         </div>
       </div>
     </div>
@@ -109,9 +101,7 @@
                   <li class="nav-item">
                     <a class="nav-link active" id="custom-tabs-two-home-tab" data-toggle="pill" href="#custom-tabs-two-home" role="tab" aria-controls="custom-tabs-two-home" aria-selected="true">Income Analysis</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" id="custom-tabs-two-profile-tab" data-toggle="pill" href="#custom-tabs-two-profile" role="tab" aria-controls="custom-tabs-two-profile" aria-selected="false">Liquidity</a>
-                  </li>
+
                   <li class="nav-item">
                     <a class="nav-link" id="custom-tabs-two-messages-tab" data-toggle="pill" href="#custom-tabs-two-messages" role="tab" aria-controls="custom-tabs-two-messages" aria-selected="false">Profitability</a>
                   </li>
@@ -152,14 +142,6 @@
                           <!-- /.col -->
                           <div class="col">
                             <div class="description-block border-right">
-                            <h5 class="description-header" id="oiText"></h5>
-                              <span class="description-text">OPERATING INCOME</span><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(The profit generated from a companys regular business operations. It is calculated by subtracting operating expenses from gross profit.)> </i>
-                            </div>
-                            <!-- /.description-block -->
-                          </div>
-                          <!-- /.col -->
-                          <div class="col">
-                            <div class="description-block border-right">
                             <h5 class="description-header" id="npText"></h5>
                               <span class="description-text">NET PROFIT</span><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(The final profit earned by a company after deducting all expenses, including taxes and interest. It represents the overall profitability of the business.)> </i>
                             </div>
@@ -172,52 +154,7 @@
                     </div>
                     <!-- CARD -->
                   </div>
-                  <div class="tab-pane fade" id="custom-tabs-two-profile" role="tabpanel" aria-labelledby="custom-tabs-two-profile-tab">
-                    <!-- LIQUIDITY CARD -->
-                    <div class="card">
-                      <!-- /.card-header -->
-                      <div class="card-body">
-                        <div class="row">
-                          <div class="col">
-                            <p class="text-center">
-                              <strong>Chart</strong>
-                            </p>
 
-                            <div class="chart">
-                              <!-- liquidity Chart Canvas -->
-                              <canvas id="liquidityChart" height="180" style="height: 180px;"></canvas>
-                            </div>
-                            <!-- /.chart-responsive -->
-                          </div>
-                        </div>
-                        <!-- /.row -->
-                      </div>
-                      <!-- ./card-body -->
-                      <div class="card-footer">
-                        <div class="row">
-                          <div class="col">
-                            <div class="description-block border-right">
-                            <h5 class="description-header" id="clText"></h5>
-                              <span class="description-text">CURRENT LIQUIDITY</span><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(Current liquidity refers to a companys ability to pay off its short-term obligations. It measures the companys ability to meet its current liabilities using its current assets, such as cash, accounts receivable, and inventory.)> </i>
-                            </div>
-                            <!-- /.description-block -->
-                          </div>
-                          <!-- /.col -->
-                          <div class="col">
-                            <div class="description-block border-right">
-                            <h5 class="description-header" id="atText"></h5>
-                              <span class="description-text">QUICK (ACID TEST)</span><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(The acid test, also known as the quick ratio, is a measure of a companys short-term liquidity. It assesses the companys ability to cover its immediate liabilities using its most liquid assets, excluding inventory.)> </i>
-                            </div>
-                            <!-- /.description-block -->
-                          </div>
-                          <!-- /.col -->
-                        </div>
-                        <!-- /.row -->
-                      </div>
-                      <!-- /.card-footer -->
-                    </div>
-                    <!-- CARD -->
-                  </div>
                   <div class="tab-pane fade" id="custom-tabs-two-messages" role="tabpanel" aria-labelledby="custom-tabs-two-messages-tab">
                     <!-- PROFITABILITY CARD -->
                     <div class="card">
@@ -243,16 +180,16 @@
                         <div class="row">
                           <div class="col">
                             <div class="description-block border-right">
-                            <h5 class="description-header" id="pmText"></h5>
-                              <span class="description-text">PROFIT MARGIN ON SALES</span><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(Profit margin on sales is the percentage of profit a company earns from each dollar of revenue generated. It indicates how efficiently a company manages its costs and pricing strategies to generate profit)></i>
+                            <h5 class="description-header" id="itText"></h5>
+                              <span class="description-text">Inventory turnover</span><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(Profit margin on sales is the percentage of profit a company earns from each dollar of revenue generated. It indicates how efficiently a company manages its costs and pricing strategies to generate profit)></i>
                             </div>
                             <!-- /.description-block -->
                           </div>
                           <!-- /.col -->
                           <div class="col">
                             <div class="description-block border-right">
-                            <h5 class="description-header" id="raText"></h5>
-                              <span class="description-text">RETURN ON ASSETS</span><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="left" @popper(Return on assets (ROA) measures a companys profitability in relation to its total assets. It shows how effectively a company utilizes its assets to generate profit.)> </i>
+                            <h5 class="description-header" id="pmText"></h5>
+                              <span class="description-text">PROFIT margin on sales</span><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(The profit generated from a companys regular business operations. It is calculated by subtracting operating expenses from gross profit.)> </i>
                             </div>
                             <!-- /.description-block -->
                           </div>
@@ -270,10 +207,10 @@
             </div>
           </div>
         </div>
+      </div>
 
 </div>
 
 <script src="dist/js/finly.js"></script>
 
 @stop
-
