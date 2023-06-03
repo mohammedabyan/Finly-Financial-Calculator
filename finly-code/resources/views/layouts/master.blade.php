@@ -6,6 +6,7 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>FinlyLITE | Dashboard</title>
 
+  <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
@@ -172,7 +173,7 @@
     <aside class="main-sidebar sidebar-light-purple elevation-4">
         <!-- Brand Logo -->
         <a href="home" class="brand-link" style="background-color: #8C52FF">
-        <img src="dist/img/finlylogo.png" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <img src="dist/img/finlywhite.png" class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light text-white">FINLY</span>
         </a>
 
