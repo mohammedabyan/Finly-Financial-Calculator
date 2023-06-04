@@ -3,9 +3,10 @@
 @extends('layouts.master')
 
 @section('style')
-#OUTPUT {
+#OUTPUT, #OUTPUT2 {
   visibility: hidden;
 }
+
 @stop
 
 @section('content')
@@ -209,8 +210,68 @@
         </div>
       </div>
 
+      <div class="row" id="OUTPUT2">
+        <div class="col">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Listed Financial Indicators</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th style="width: 10px">#</th>
+                      <th>Financial Variables</th>
+                      <th>Amount<i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(If Blue, unit is measured in $. Else, unit is measured in %.)> </i></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1.</td>
+                      <td>GrossProfit</td>
+                      <td><span class="badge bg-primary" id="grossProfit1"></span></td>
+                    </tr>
+                    <tr>
+                      <td>2.</td>
+                      <td>NetProfit</td>
+                      <td><span class="badge bg-primary"  id="netProfit1"></span></td>
+                    </tr>
+                    <tr>
+                      <td>3.</td>
+                      <td>ProfitMargin</td>
+                      <td><span class="badge bg-warning" id="profitMargin1"></span></td>
+                    </tr>
+                    <tr>
+                      <td>4.</td>
+                      <td>InventoryTurnover</td>
+                      <td><span class="badge bg-warning" id="inventoryTurnover1"></span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+      </div>
+
 </div>
 
 <script src="dist/js/finly.js"></script>
+
+{{-- <script>
+
+    var gP = document.getElementById("grossProfit").value;
+    document.getElementById("grossProfit1").innerHTML = gP;
+    var nP = document.getElementById("netProfit").value;
+    document.getElementById("netProfit1").innerHTML = nP;
+    var pM = document.getElementById("profitMargin").value;
+    document.getElementById("profitMargin1").innerHTML = pM;
+    var iT = document.getElementById("inventoryTurnover").value;
+    document.getElementById("inventoryTurnover1").innerHTML = iT;
+
+</script> --}}
+
 
 @stop

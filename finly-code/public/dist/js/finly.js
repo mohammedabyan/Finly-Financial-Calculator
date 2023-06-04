@@ -119,6 +119,7 @@ function calculateSimpleMetrics() {
 
 
     document.getElementById("OUTPUT").style.visibility = "visible";
+    document.getElementById("OUTPUT2").style.visibility = "visible";
     // Get form values
     const form = document.getElementById('simpleInput');
     const Sales = form.elements.grossRevenue.value;
@@ -129,9 +130,13 @@ function calculateSimpleMetrics() {
 
     // Calculate metrics
     const grossProfit = Sales - COGS;
+    document.getElementById("grossProfit1").innerHTML = grossProfit;
     const netProfit = grossProfit - operatingExpenses;
+    document.getElementById("netProfit1").innerHTML = netProfit;
     const profitMargin = grossProfit / Sales;
+    document.getElementById("profitMargin1").innerHTML =  profitMargin;
     const inventoryTurnover = Sales / Inventory;
+    document.getElementById("inventoryTurnover1").innerHTML = inventoryTurnover;
 
     // Display barchart
     const ctx1 = document.getElementById('salesChart').getContext('2d');
@@ -203,6 +208,7 @@ function calculateAdvancedMetrics() {
 
 
   document.getElementById("OUTPUT").style.visibility = "visible";
+  document.getElementById("OUTPUT2").style.visibility = "visible";
 
   // Get form values
   const form = document.getElementById('advanced');
@@ -220,16 +226,27 @@ function calculateAdvancedMetrics() {
 
   // Calculate metrics
   const grossProfit = Math.round(grossRevenue - costOfGoodsSold);
+  document.getElementById("grossProfit2").innerHTML = grossProfit;
   const operatingIncome = Math.round(grossProfit - operatingExpenses);
+  document.getElementById("operatingIncome2").innerHTML = operatingIncome;
   const incomeBeforeTax = Math.round(operatingIncome - interestExpense);
+  document.getElementById("incomeBeforeTax2").innerHTML = incomeBeforeTax;
   const netProfit = Math.round(incomeBeforeTax - incomeTaxExpense);
+  document.getElementById("netProfit2").innerHTML = netProfit;
   const currentLiquidity = Math.round(currentAssets / currentLiabilities);
+  document.getElementById("currentLiquidity2").innerHTML = currentLiquidity;
   const quickLiquidity = Math.round((currentAssets - inventory) / currentLiabilities);
+  document.getElementById("quickLiquidity2").innerHTML = quickLiquidity;
   const inventoryTurnover = Math.round(grossRevenue / inventory);
+  document.getElementById("inventoryTurnover2").innerHTML = inventoryTurnover;
   const fixedAssetsTurnover = Math.round(grossRevenue / fixedAssets);
+  document.getElementById("fixedAssetsTurnover2").innerHTML = fixedAssetsTurnover;
   const debtToTotalAssets = Math.round(totalLiabilities / totalAssets);
+  document.getElementById("debtToTotalAssets2").innerHTML = debtToTotalAssets;
   const profitMargin = Math.round(netProfit / grossRevenue);
+  document.getElementById("profitMargin2").innerHTML = profitMargin;
   const returnOnAssets = Math.round(netProfit / totalAssets);
+  document.getElementById("returnOnAssets2").innerHTML = returnOnAssets;
 
 
   // Display barchart

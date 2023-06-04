@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('style')
-#OUTPUT {
+#OUTPUT, #OUTPUT2 {
   visibility: hidden;
 }
 @stop
@@ -414,7 +414,113 @@
       </div>
     </div>
 
+    <div class="row" id="OUTPUT2">
+        <div class="col">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Listed Financial Indicators</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th style="width: 10px">#</th>
+                      <th>Financial Variables</th>
+                      <th>Amount<i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(If Blue, unit is measured in $. Else, unit is measured in %.)> </i></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1.</td>
+                      <td>GrossProfit</td>
+                      <td><span class="badge bg-primary" id="grossProfit2"></span></td>
+                    </tr>
+                    <tr>
+                      <td>2.</td>
+                      <td>OperatingIncome</td>
+                      <td><span class="badge bg-primary" id="operatingIncome2"></span></td>
+                    </tr>
+                    <tr>
+                      <td>3.</td>
+                      <td>IncomeBeforeTax</td>
+                      <td><span class="badge bg-primary" id="incomeBeforeTax2"></span></td>
+                    </tr>
+                    <tr>
+                      <td>4.</td>
+                      <td>NetProfit</td>
+                      <td><span class="badge bg-primary" id="netProfit2"></span></td>
+                    </tr>
+                    <tr>
+                        <td>5.</td>
+                        <td>CurrentLiquidity</td>
+                        <td><span class="badge bg-warning" id="currentLiquidity2"></span></td>
+                    </tr>
+                    <tr>
+                        <td>6.</td>
+                        <td>QuickLiquidity</td>
+                        <td><span class="badge bg-warning" id="quickLiquidity2"></span></td>
+                    </tr>
+                    <tr>
+                        <td>7.</td>
+                        <td>InventoryTurnover</td>
+                        <td><span class="badge bg-warning" id="inventoryTurnover2"></span></td>
+                    </tr>
+                    <tr>
+                        <td>8.</td>
+                        <td>FixedAssetsTurnover</td>
+                        <td><span class="badge bg-warning" id="fixedAssetsTurnover2"></span></td>
+                    </tr>
+                    <tr>
+                        <td>9.</td>
+                        <td>DebtToTotalAssets</td>
+                        <td><span class="badge bg-success" id="debtToTotalAssets2"></span></td>
+                    </tr>
+                    <tr>
+                        <td>10.</td>
+                        <td>ProfitMargin</td>
+                        <td><span class="badge bg-success" id="profitMargin2"></span></td>
+                    </tr>
+                    <tr>
+                        <td>11.</td>
+                        <td>ReturnOnAssets</td>
+                        <td><span class="badge bg-success" id="returnOnAssets2"></span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+      </div>
 
 </div>
 <script src="dist/js/finly.js"></script>
+
+{{-- <script>
+var gP = document.getElementById("grossProfit").value;
+document.getElementById("grossProfit").innerHTML = gP;
+var oI = document.getElementById("operatingIncome").value;
+document.getElementById("operatingIncome").innerHTML = gP;
+var iBT = document.getElementById("incomeBeforeTax").value;
+document.getElementById("incomeBeforeTax").innerHTML = iBT;
+var nP = document.getElementById("netProfit").value;
+document.getElementById("netProfit").innerHTML = nP;
+var cL = document.getElementById("currentLiquidity").value;
+document.getElementById("currentLiquidity").innerHTML = cL;
+var qL = document.getElementById("quickLiquidity").value;
+document.getElementById("quickLiquidity").innerHTML = qL;
+var iT = document.getElementById("inventoryTurnover").value;
+document.getElementById("inventoryTurnover").innerHTML = iT;
+var fAT = document.getElementById("fixedAssetsTurnover").value;
+document.getElementById("fixedAssetsTurnover").innerHTML = fAT;
+var dTTA = document.getElementById("debtToTotalAssets").value;
+document.getElementById("debtToTotalAssets").innerHTML = dTTA;
+var pM = document.getElementById("profitMargin").value;
+document.getElementById("profitMargin").innerHTML = pM;
+var rOA = document.getElementById("returnOnAssets").value;
+document.getElementById("returnOnAssets").innerHTML = rOA;
+</script> --}}
+
 @stop
