@@ -44,12 +44,12 @@
             <!-- form start -->
             <div class="card-body">
                 <div class="form-group">
-                <label for="grossRevenue">Sales / Gross Revenue</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(TOOLTIP DESC)></i>
+                <label for="grossRevenue">Sales / Gross Revenue</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(Gross Revenue, also known as Gross Sales or Total Revenue, represents the total amount of money generated from sales of goods or services before deducting any expenses. It includes sales revenue but excludes any discounts, returns, or allowances.)></i>
                 <input type="number" class="form-control" id="grossRevenue" placeholder="Enter a number" min=0>
                 </div>
 
                 <div class="form-group">
-                <label for="inventory">Inventory</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(TOOLTIP DESC)> </i>
+                <label for="inventory">Inventory</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper( Inventory refers to the goods or products that a company holds for sale in the ordinary course of business. It includes raw materials, work-in-progress, and finished goods. Inventory is an important asset for businesses, and its value is recorded on the balance sheet. Proper management of inventory helps ensure smooth operations and timely fulfillment of customer orders.)> </i>
                 <input type="number" class="form-control" id="inventory" placeholder="Enter a number" min=0>
                 </div>
 
@@ -68,12 +68,12 @@
             <!-- form start -->
             <div class="card-body">
                 <div class="form-group">
-                <label for="costOfGoodsSold">COGS</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(TOOLTIP DESC)> </i>
+                <label for="costOfGoodsSold">COGS</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(Refers to the direct costs incurred in producing or acquiring the goods or services that a company sells. It includes expenses such as raw materials, direct labor, and manufacturing overhead. COGS is subtracted from the Gross Revenue to calculate the Gross Profit.)> </i>
                 <input type="number" class="form-control" id="costOfGoodsSold" placeholder="Enter a number" min=0>
                 </div>
 
                 <div class="form-group">
-                <label for="operatingExpenses">Operating Expenses</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(TOOLTIP DESC)> </i>
+                <label for="operatingExpenses">Operating Expenses</label><i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" @popper(Operating Expenses are the costs incurred by a company to maintain its day-to-day operations. These expenses include salaries, rent, utilities, marketing expenses, administrative costs, and other overhead expenses. Operating Expenses are subtracted from the Gross Profit to calculate the Operating Income.)> </i>
                 <input type="number" class="form-control" id="operatingExpenses" placeholder="Enter a number" min=0>
                 </div>
             </div>
